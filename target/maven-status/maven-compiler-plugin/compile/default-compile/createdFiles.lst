@@ -1,0 +1,5 @@
+schemas/Vertex.class
+loader/LoadEdges.class
+loader/LoadVertices.class
+schemas/Edges.class
+example/GraphFramesAppMain.class
