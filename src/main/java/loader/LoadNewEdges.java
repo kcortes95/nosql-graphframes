@@ -20,10 +20,14 @@ public class LoadNewEdges {
 
         /*
         loadStopStopEdges(LoadNewVertices.getStops(), LoadNewVertices.getStops(Utils.stopPath), edges, Utils.stopPath);
+        */
+
+        System.out.println("en LOADEDGES: " + LoadNewVertices.getVenues());
+
         loadStopVenuesEdges(LoadNewVertices.getStops(), LoadNewVertices.getVenues(), edges, Utils.stopPath);
         loadVenuesCategoriesEdges(LoadNewVertices.getVenues(), LoadNewVertices.getCategories(), edges, Utils.venuesPath);
         loadCategoriesCategoryEdges(LoadNewVertices.getCategories(), LoadNewVertices.getCategory(), edges, Utils.categoriesPath);
-        */
+
         return edges;
     }
 
@@ -37,8 +41,8 @@ public class LoadNewEdges {
 
                 //me
                 String userid = datas[0];
-                String utctimestamp = datas[1];
-                String tpos = datas[2];
+                String utctimestamp = datas[2];
+                String tpos = datas[3];
 
                 Stop stop = new Stop(userid, utctimestamp, tpos);
 
@@ -71,11 +75,17 @@ public class LoadNewEdges {
                 String tpos = datas[3];
 
                 String venueid = datas[1];
+                venueid = venueid.replace("'", "\"");
 
                 Stop stop = new Stop(userid, utctimestamp, tpos);
 
                 Long from = stops.get(stop);
                 Long to = venues.get(venueid);
+
+                System.out.println("-----");
+                System.out.println( stop + " >> " + venueid);
+                System.out.println( from + " >> " + to);
+                System.out.println("-----");
 
                 edges.add(RowFactory.create(from, to, false, true, false, false, 3));
             }
@@ -99,6 +109,8 @@ public class LoadNewEdges {
                 Long from = venues.get(venueid);
                 Long to = categories.get(category);
 
+                //System.out.println( cats + "(" + from + ")" + " >> " + cat + "(" + to + ")");
+
                 edges.add(RowFactory.create(from, to, false, false, true, false, 5));
             }
         } catch (IOException e) {
@@ -120,6 +132,8 @@ public class LoadNewEdges {
 
                 Long from = categories.get(cats);
                 Long to = category.get(cat);
+
+                //System.out.println( cats + "(" + from + ")" + " >> " + cat + "(" + to + ")");
 
                 edges.add(RowFactory.create(from, to, false, false, false, true, 7));
             }

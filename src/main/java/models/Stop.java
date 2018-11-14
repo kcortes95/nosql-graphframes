@@ -52,4 +52,10 @@ public class Stop {
     public int hashCode() {
         return Objects.hash(userid, utctimestamp, tpos);
     }
+
+    @Override
+    public String toString() {
+        return "{" + "userid='" + userid + ", utctimestamp='" + utctimestamp + ", tpos='" + tpos + '}';
+    }
+
 }

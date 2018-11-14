@@ -32,17 +32,19 @@ public class LoadNewVertices {
 
         mapCattype = fillCategory(0L, vertList, Utils.categoryPath);
         offset += mapCattype.size();
-
-        System.out.println("offset: " + offset);
+        System.out.println("mapCategory: " + mapCattype);
 
         mapVenueCategory = fillCategories(offset, vertList, mapCattype, Utils.categoriesPath);
         offset += mapVenueCategory.size();
-
+        System.out.println("mapCategories: " + mapVenueCategory);
 
         mapVenues = fillVenues(offset, vertList, mapVenueCategory, Utils.venuesPath);
         offset += mapVenues.size();
+        System.out.println("mapVenues: " + mapVenues);
 
         mapStops = fillStops(offset, vertList, mapVenues, Utils.stopPath);
+        System.out.println("mapStops: " + mapStops);
+
 
         return vertList;
     }
@@ -77,7 +79,7 @@ public class LoadNewVertices {
             for(long i = 1 + offset ; i < arr.length + offset; i++){
                 String data = (String) arr[(int)(i - offset)];
                 String datas[] = data.split(",");
-                mapVenueCategory.put( datas[0], (i - offset));
+                mapVenueCategory.put( datas[0], i);
                 vertList.add(RowFactory.create(i,null,null,null,null,datas[0],null,4));
             }
         } catch (IOException e) {
@@ -97,7 +99,7 @@ public class LoadNewVertices {
             for(long i = 1 + offset ; i < arr.length + offset; i++){
                 String data = (String) arr[(int)(i - offset)];
                 String datas[] = data.split(",");
-                mapVenues.put( datas[0], (i - offset));
+                mapVenues.put( datas[0], i);
                 vertList.add(RowFactory.create(i,null,null,null,datas[0],null,null,2));
             }
         } catch (IOException e) {
@@ -118,7 +120,7 @@ public class LoadNewVertices {
                 String data = (String) arr[(int)(i - offset)];
                 String datas[] = data.split(",");
                 Stop stop = new Stop(datas[0], datas[2], datas[3]);
-                map.put(stop, (i - offset));
+                map.put(stop, i);
 
                 SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy");
                 String dateString = datas[2];

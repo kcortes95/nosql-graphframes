@@ -40,13 +40,17 @@ public class GraphFramesAppMain {
 		myGraph.vertices().createOrReplaceTempView("v_table");
 		Dataset<Row> newVerticesDF = myGraph.sqlContext().sql("SELECT * from v_table where vertextype = 0");
 
+        myGraph.edges().createOrReplaceTempView("e_table");
+        Dataset<Row> newEdgesDF = myGraph.sqlContext().sql("SELECT * from e_table where edgetype = 3");
+
 		//myGraph.vertices().printSchema();
 		//myGraph.vertices().show(1000);
 
-		GraphFrame g = GraphFrame.apply(newVerticesDF, edges);
+		GraphFrame g = GraphFrame.apply(vertices, newEdgesDF);
 		g.vertices().printSchema();
-		g.vertices().show();
-
+		//g.vertices().show(10000);
+		g.edges().printSchema();
+		g.edges().show(1000);
 
 		//myGraph.edges().createOrReplaceTempView("e_table");
 		//Dataset<Row> newEdgesDF = myGraph.sqlContext().sql("SELECT * from e_table");
