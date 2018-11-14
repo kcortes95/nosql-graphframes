@@ -14,7 +14,7 @@ public class VertexSchema {
 
         vertFields.add(DataTypes.createStructField("id", DataTypes.LongType, false));
         vertFields.add(DataTypes.createStructField("userid", DataTypes.StringType, true));
-        vertFields.add(DataTypes.createStructField("utctimestamp", DataTypes.TimestampType , true));
+        vertFields.add(DataTypes.createStructField("utctimestamp", DataTypes.DateType, true));
         vertFields.add(DataTypes.createStructField("tpos", DataTypes.LongType, true));
         vertFields.add(DataTypes.createStructField("venueid", DataTypes.StringType, true));
         vertFields.add(DataTypes.createStructField("venuecategory", DataTypes.StringType, true));

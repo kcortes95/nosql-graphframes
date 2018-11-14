@@ -30,7 +30,7 @@ public class GraphFramesAppMain {
 		//Dataset<Row> verticesStop = sqlContext.createDataFrame(sparkContext.parallelize(LoadVertices.LoadVertices()), Vertex.CreateStopsVertex());
 		//Dataset<Row> edgesStop = sqlContext.createDataFrame(sparkContext.parallelize(LoadEdges.LoadEdges()), Edges.CreateStopStopEdge());
 
-        Dataset<Row> vertices = sqlContext.createDataFrame(sparkContext.parallelize(LoadNewVertices.LoadVertices(args[0], args[1], args[2], args[3])), VertexSchema.CreateVertex());
+        Dataset<Row> vertices = sqlContext.createDataFrame(sparkContext.parallelize(LoadNewVertices.LoadVertices("","","","")), VertexSchema.CreateVertex());
 		Dataset<Row> edges = sqlContext.createDataFrame(sparkContext.parallelize(LoadNewEdges.LoadEdges(LoadNewVertices.getMaps())), EdgeSchema.CreateEdge());
 
 		// create the graph
@@ -38,10 +38,15 @@ public class GraphFramesAppMain {
 		GraphFrame myGraph = GraphFrame.apply(vertices, edges);
 
 		myGraph.vertices().createOrReplaceTempView("v_table");
-		Dataset<Row> newVerticesDF = myGraph.sqlContext().sql("SELECT * from v_table");
+		Dataset<Row> newVerticesDF = myGraph.sqlContext().sql("SELECT * from v_table where vertextype = 0");
 
-		myGraph.vertices().printSchema();
-		myGraph.vertices().show();
+		//myGraph.vertices().printSchema();
+		//myGraph.vertices().show(1000);
+
+		GraphFrame g = GraphFrame.apply(newVerticesDF, edges);
+		g.vertices().printSchema();
+		g.vertices().show();
+
 
 		//myGraph.edges().createOrReplaceTempView("e_table");
 		//Dataset<Row> newEdgesDF = myGraph.sqlContext().sql("SELECT * from e_table");

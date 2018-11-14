@@ -1,12 +1,16 @@
 package loader;
 
 import models.Stop;
+import models.Utils;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.RowFactory;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -22,33 +26,33 @@ public class LoadNewVertices {
 
     public static ArrayList<Row> LoadVertices(String pathCatType, String pathVenueCategory, String pathVenues, String pathStops) {
 
-        //pathCatType = "/home/kcortesrodrigue/categories.csv";
-        //pathVenueCategory = "/home/kcortesrodrigue/venuecategory.csv";
-        //pathVenues = "/home/kcortesrodrigue/venueid.csv";
-        //pathStops = "/home/kcortesrodrigue/stops.csv";
-
         long offset = 0L;
 
         ArrayList<Row> vertList = new ArrayList<>();
 
-        mapCattype = fillCatType(0L, vertList, pathCatType);
+        mapCattype = fillCategory(0L, vertList, Utils.categoryPath);
         offset += mapCattype.size();
 
-        mapVenueCategory = fillVenueCategory(offset, vertList, mapCattype, pathVenueCategory);
+        System.out.println("offset: " + offset);
+
+        mapVenueCategory = fillCategories(offset, vertList, mapCattype, Utils.categoriesPath);
         offset += mapVenueCategory.size();
 
-        mapVenues = fillVenues(offset, vertList, mapVenueCategory, pathVenues);
+
+        mapVenues = fillVenues(offset, vertList, mapVenueCategory, Utils.venuesPath);
         offset += mapVenues.size();
 
-        mapStops = fillStops(offset, vertList, mapVenues, pathStops);
+        mapStops = fillStops(offset, vertList, mapVenues, Utils.stopPath);
 
         return vertList;
     }
 
 
-    private static Map<String, Long> fillCatType(Long offset, ArrayList<Row> vertList, String path) {
+    private static Map<String, Long> fillCategory(Long offset, ArrayList<Row> vertList, String path) {
 
         Map<String, Long> mapCattype = new HashMap<>();
+
+        File f = new File("/home/kcortesrodrigue/category.csv");
 
         try (Stream<String> stream = Files.lines(Paths.get(path))) {
             Object[] arr = stream.toArray();
@@ -57,27 +61,27 @@ public class LoadNewVertices {
                 mapCattype.put( (String) arr[(int)i], i);
             }
         } catch (IOException e) {
-            System.out.println("Tiro exception a la fillCatType + " + e);
+            System.out.println("Tiro exception a la fillCategory + " + e);
             e.printStackTrace();
         }
 
         return mapCattype;
     }
 
-    private static Map<String, Long> fillVenueCategory(Long offset, ArrayList<Row> vertList, Map<String, Long> mapCattype, String path) {
+    private static Map<String, Long> fillCategories(Long offset, ArrayList<Row> vertList, Map<String, Long> mapCattype, String path) {
 
         Map<String, Long> mapVenueCategory = new HashMap<>();
 
         try (Stream<String> stream = Files.lines(Paths.get(path))) {
             Object[] arr = stream.toArray();
             for(long i = 1 + offset ; i < arr.length + offset; i++){
-                String data = (String) arr[(int)i];
+                String data = (String) arr[(int)(i - offset)];
                 String datas[] = data.split(",");
-                mapVenueCategory.put( datas[0], i);
+                mapVenueCategory.put( datas[0], (i - offset));
                 vertList.add(RowFactory.create(i,null,null,null,null,datas[0],null,4));
             }
         } catch (IOException e) {
-            System.out.println("Tiro exception a la fillVenueCategory + " + e);
+            System.out.println("Tiro exception a la fillCategories + " + e);
             e.printStackTrace();
         }
 
@@ -91,9 +95,9 @@ public class LoadNewVertices {
         try (Stream<String> stream = Files.lines(Paths.get(path))) {
             Object[] arr = stream.toArray();
             for(long i = 1 + offset ; i < arr.length + offset; i++){
-                String data = (String) arr[(int)i];
+                String data = (String) arr[(int)(i - offset)];
                 String datas[] = data.split(",");
-                mapVenues.put( datas[0], i);
+                mapVenues.put( datas[0], (i - offset));
                 vertList.add(RowFactory.create(i,null,null,null,datas[0],null,null,2));
             }
         } catch (IOException e) {
@@ -111,14 +115,24 @@ public class LoadNewVertices {
         try (Stream<String> stream = Files.lines(Paths.get(path))) {
             Object[] arr = stream.toArray();
             for(long i = 1 + offset ; i < arr.length + offset; i++){
-                String data = (String) arr[(int)i];
+                String data = (String) arr[(int)(i - offset)];
                 String datas[] = data.split(",");
-                Stop stop = new Stop(datas[0], datas[1], datas[2]);
-                map.put(stop, i);
-                vertList.add(RowFactory.create(i,datas[0],datas[1],datas[2],null,null,null,0));
+                Stop stop = new Stop(datas[0], datas[2], datas[3]);
+                map.put(stop, (i - offset));
+
+                SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy");
+                String dateString = datas[2];
+                dateString = dateString.replace("'", "");
+                java.sql.Date d = new java.sql.Date(sdf.parse(dateString).getTime());
+
+                //vertList.add(RowFactory.create(i,datas[0],datas[1],datas[2],null,null,null,0));
+                vertList.add(RowFactory.create(i,datas[0],d,Long.parseLong(datas[3]),null,null,null,0));
             }
         } catch (IOException e) {
             System.out.println("Tiro exception a la fillStops + " + e);
+            e.printStackTrace();
+        } catch (ParseException e) {
+            System.out.println("Tiro exception en ParseException + " + e);
             e.printStackTrace();
         }
 
@@ -164,18 +178,19 @@ public class LoadNewVertices {
 
     }
 
-    public static List<Long> getStopsByUserId(String userid){
-        List<Long> list = new ArrayList<>();
-
-        mapStops.entrySet().stream().forEach( e -> {
-               if ( e.getKey().getUserid().equals(userid) ){
-                   list.add(e.getValue());
-               }
-        });
-
-        return list;
-
+    public static Map<String, Long> getCategory() {
+        return mapCattype;
     }
 
+    public static Map<String, Long> getCategories() {
+        return mapVenueCategory;
+    }
 
+    public static Map<String, Long> getVenues() {
+        return mapVenues;
+    }
+
+    public static Map<Stop, Long> getStops() {
+        return mapStops;
+    }
 }
