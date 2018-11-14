@@ -135,5 +135,47 @@ public class LoadNewVertices {
         return list;
     }
 
+    public static Map<String, List<Long>> getStops(String path) {
+
+        Map<String, List<Long>> map = new HashMap<>();
+
+        try (Stream<String> stream = Files.lines(Paths.get(path))) {
+            Object[] arr = stream.toArray();
+            for(long i = 1; i < arr.length; i++){
+                String data = (String) arr[(int)i];
+                String datas[] = data.split(",");
+                String userid = datas[0];
+
+                if (map.containsKey(userid)){
+                    map.put(userid, new ArrayList<>());
+                }
+
+                List<Long> l = map.get(userid);
+                l.add(i);
+                map.put(userid, l);
+
+            }
+        } catch (IOException e) {
+            System.out.println("Tiro exception a la fillStops + " + e);
+            e.printStackTrace();
+        }
+
+        return map;
+
+    }
+
+    public static List<Long> getStopsByUserId(String userid){
+        List<Long> list = new ArrayList<>();
+
+        mapStops.entrySet().stream().forEach( e -> {
+               if ( e.getKey().getUserid().equals(userid) ){
+                   list.add(e.getValue());
+               }
+        });
+
+        return list;
+
+    }
+
 
 }

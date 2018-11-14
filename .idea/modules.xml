@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/graphframes-ex8.iml" filepath="$PROJECT_DIR$/graphframes-ex8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/graphframes-tpe.iml" filepath="$PROJECT_DIR$/graphframes-tpe.iml" />
     </modules>
   </component>
 </project>

@@ -7,47 +7,22 @@ import org.apache.spark.sql.types.StructType;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Edges {
+public class EdgeSchema {
 
-    public static StructType CreateStopStopEdge() {
+    public static StructType CreateEdge() {
         List<StructField> edgeFields = new ArrayList<StructField>();
 
         edgeFields.add(DataTypes.createStructField("src", DataTypes.LongType, true));
         edgeFields.add(DataTypes.createStructField("dst", DataTypes.LongType, true));
-        edgeFields.add(DataTypes.createStructField("trajStep", DataTypes.StringType, true));
-
-        return DataTypes.createStructType(edgeFields);
-    }
-
-    public static StructType CreateStopVenuesEdge() {
-        List<StructField> edgeFields = new ArrayList<StructField>();
-
-        edgeFields.add(DataTypes.createStructField("src", DataTypes.LongType, true));
-        edgeFields.add(DataTypes.createStructField("dst", DataTypes.LongType, true));
+        edgeFields.add(DataTypes.createStructField("trajStep", DataTypes.BooleanType, true));
         edgeFields.add(DataTypes.createStructField("isVenue", DataTypes.BooleanType, true));
-
-        return DataTypes.createStructType(edgeFields);
-    }
-
-    public static StructType CreateVenuesCategoriesEdge() {
-        List<StructField> edgeFields = new ArrayList<StructField>();
-
-        edgeFields.add(DataTypes.createStructField("src", DataTypes.LongType, true));
-        edgeFields.add(DataTypes.createStructField("dst", DataTypes.LongType, true));
         edgeFields.add(DataTypes.createStructField("hasCategory", DataTypes.BooleanType, true));
+        edgeFields.add(DataTypes.createStructField("subCategoryOf", DataTypes.BooleanType, true));
+        edgeFields.add(DataTypes.createStructField("edgetype", DataTypes.IntegerType, true));
 
         return DataTypes.createStructType(edgeFields);
     }
 
-    public static StructType CreateCategoriesCategoryEdge() {
-        List<StructField> edgeFields = new ArrayList<StructField>();
-
-        edgeFields.add(DataTypes.createStructField("src", DataTypes.LongType, true));
-        edgeFields.add(DataTypes.createStructField("dst", DataTypes.LongType, true));
-        edgeFields.add(DataTypes.createStructField("subCategoryOf", DataTypes.StringType, true));
-
-        return DataTypes.createStructType(edgeFields);
-    }
 
 
 
