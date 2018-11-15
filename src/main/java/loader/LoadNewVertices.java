@@ -162,7 +162,7 @@ public class LoadNewVertices {
                 String datas[] = data.split(",");
                 String userid = datas[0];
 
-                if (map.containsKey(userid)){
+                if (!map.containsKey(userid)){
                     map.put(userid, new ArrayList<>());
                 }
 

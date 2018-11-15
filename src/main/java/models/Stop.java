@@ -55,7 +55,7 @@ public class Stop {
 
     @Override
     public String toString() {
-        return "{" + "userid='" + userid + ", utctimestamp='" + utctimestamp + ", tpos='" + tpos + '}';
+        return "{" + "userid=" + userid + ", utctimestamp=" + utctimestamp + ", tpos=" + tpos + '}';
     }
 
 }

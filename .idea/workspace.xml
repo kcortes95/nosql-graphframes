@@ -7,13 +7,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/loader/LoadNewEdges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/loader/LoadNewEdges.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/loader/LoadNewVertices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/loader/LoadNewVertices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/Stop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Stop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/example/GraphFramesAppMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/example/GraphFramesAppMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/loader/LoadNewEdges.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/loader/LoadNewEdges.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/loader/LoadNewVertices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/loader/LoadNewVertices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/Stop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Stop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/graphframes-tpe-1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/graphframes-tpe-1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-graphframes-tpe-1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-graphframes-tpe-1.jar" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,36 +19,37 @@
     <session id="-872614202">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.6" value="2" />
+          <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="iml" value="2" />
-          <entry key="java" value="29" />
+          <entry key="java" value="32" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="2" />
-          <entry key="JAVA" value="29" />
+          <entry key="JAVA" value="32" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2745" />
+          <entry key="java" value="2867" />
           <entry key="xml" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2745" />
+          <entry key="JAVA" value="2867" />
           <entry key="XML" value="9" />
         </counts>
       </usages-collector>
@@ -63,31 +57,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/loader/LoadNewEdges.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="77" column="49" selection-start-line="77" selection-start-column="49" selection-end-line="77" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#loadStopStopEdges#0;class#LoadNewEdges#0" />
-                <element signature="method#loadCategoriesCategoryEdges#0;class#LoadNewEdges#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/loader/LoadNewVertices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="768">
-              <caret line="191" column="17" selection-start-line="191" selection-start-column="17" selection-end-line="191" selection-end-column="17" />
+            <state relative-caret-position="894">
+              <caret line="164" column="21" selection-start-line="164" selection-start-column="21" selection-end-line="164" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getMaps#0;class#LoadNewVertices#0" />
                 <element signature="e#6699#6700#0" expanded="true" />
                 <element signature="e#6731#6732#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/loader/LoadNewEdges.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="74">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#loadCategoriesCategoryEdges#0;class#LoadNewEdges#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/models/Stop.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="655">
+              <caret line="57" column="85" selection-start-line="57" selection-start-column="85" selection-end-line="57" selection-end-column="85" />
+              <folding>
+                <element signature="e#1151#1152#0" expanded="true" />
+                <element signature="e#1214#1215#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="52" column="10" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -112,8 +127,8 @@
         <option value="$PROJECT_DIR$/src/main/java/schemas/VertexSchema.java" />
         <option value="$PROJECT_DIR$/src/main/java/loader/LoadNewVertices.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/GraphFramesAppMain.java" />
-        <option value="$PROJECT_DIR$/src/main/java/models/Stop.java" />
         <option value="$PROJECT_DIR$/src/main/java/loader/LoadNewEdges.java" />
+        <option value="$PROJECT_DIR$/src/main/java/models/Stop.java" />
       </list>
     </option>
   </component>
@@ -130,7 +145,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1680" />
     <option name="height" value="1050" />
   </component>
@@ -278,7 +293,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -340,12 +354,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542225434777" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542225619358" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="Errors" />
@@ -375,18 +390,19 @@
       <workItem from="1542146767081" duration="1735000" />
       <workItem from="1542150245484" duration="384000" />
       <workItem from="1542162736198" duration="1685000" />
-      <workItem from="1542214288090" duration="8375000" />
+      <workItem from="1542214288090" duration="8519000" />
+      <workItem from="1542246286974" duration="731000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12179000" />
+    <option name="totallyTimeSpent" value="13054000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="944" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25885227" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26190478" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -477,13 +493,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="43" column="100" selection-start-line="43" selection-start-column="100" selection-end-line="43" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/schemas/EdgeSchema.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -491,21 +500,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/models/Stop.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="57" column="21" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
-          <folding>
-            <element signature="e#1151#1152#0" expanded="true" />
-            <element signature="e#1214#1215#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="493">
+          <caret line="52" column="10" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/loader/LoadNewVertices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="191" column="17" selection-start-line="191" selection-start-column="17" selection-end-line="191" selection-end-column="17" />
+        <state relative-caret-position="894">
+          <caret line="164" column="21" selection-start-line="164" selection-start-column="21" selection-end-line="164" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getMaps#0;class#LoadNewVertices#0" />
@@ -517,12 +522,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/loader/LoadNewEdges.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="77" column="49" selection-start-line="77" selection-start-column="49" selection-end-line="77" selection-end-column="49" />
+        <state relative-caret-position="74">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#loadStopStopEdges#0;class#LoadNewEdges#0" />
             <element signature="method#loadCategoriesCategoryEdges#0;class#LoadNewEdges#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/Stop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="57" column="85" selection-start-line="57" selection-start-column="85" selection-end-line="57" selection-end-column="85" />
+          <folding>
+            <element signature="e#1151#1152#0" expanded="true" />
+            <element signature="e#1214#1215#0" expanded="true" />
           </folding>
         </state>
       </provider>

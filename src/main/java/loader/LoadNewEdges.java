@@ -18,11 +18,8 @@ public class LoadNewEdges {
     public static ArrayList<Row> LoadEdges(List<Map> list) {
         ArrayList<Row> edges = new ArrayList<Row>();
 
-        /*
-        loadStopStopEdges(LoadNewVertices.getStops(), LoadNewVertices.getStops(Utils.stopPath), edges, Utils.stopPath);
-        */
 
-        System.out.println("en LOADEDGES: " + LoadNewVertices.getVenues());
+        loadStopStopEdges(LoadNewVertices.getStops(), LoadNewVertices.getStops(Utils.stopPath), edges, Utils.stopPath);
 
         loadStopVenuesEdges(LoadNewVertices.getStops(), LoadNewVertices.getVenues(), edges, Utils.stopPath);
         loadVenuesCategoriesEdges(LoadNewVertices.getVenues(), LoadNewVertices.getCategories(), edges, Utils.venuesPath);
@@ -45,10 +42,16 @@ public class LoadNewEdges {
                 String tpos = datas[3];
 
                 Stop stop = new Stop(userid, utctimestamp, tpos);
+                System.out.println("---START---");
 
                 Long from = stops.get(stop);
 
+                System.out.println("STOP: " + stop + " >>> " + from);
+
                 List<Long> listLong = all.get(userid);
+                System.out.println(" TODOS LOS LONGS RELACIONADOS: " + listLong);
+
+                System.out.println("---END---");
 
                 listLong.forEach( e -> {
                     Long to = e;
@@ -82,10 +85,12 @@ public class LoadNewEdges {
                 Long from = stops.get(stop);
                 Long to = venues.get(venueid);
 
+                /*
                 System.out.println("-----");
                 System.out.println( stop + " >> " + venueid);
                 System.out.println( from + " >> " + to);
                 System.out.println("-----");
+                */
 
                 edges.add(RowFactory.create(from, to, false, true, false, false, 3));
             }
