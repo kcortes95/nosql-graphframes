@@ -42,16 +42,16 @@ public class LoadNewEdges {
                 String tpos = datas[3];
 
                 Stop stop = new Stop(userid, utctimestamp, tpos);
-                System.out.println("---START---");
+                //System.out.println("---START---");
 
                 Long from = stops.get(stop);
 
-                System.out.println("STOP: " + stop + " >>> " + from);
+                //System.out.println("STOP: " + stop + " >>> " + from);
 
                 List<Long> listLong = all.get(userid);
-                System.out.println(" TODOS LOS LONGS RELACIONADOS: " + listLong);
+                //System.out.println(" TODOS LOS LONGS RELACIONADOS: " + listLong);
 
-                System.out.println("---END---");
+                //System.out.println("---END---");
 
                 listLong.forEach( e -> {
                     Long to = e;

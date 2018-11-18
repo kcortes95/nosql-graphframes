@@ -32,18 +32,18 @@ public class LoadNewVertices {
 
         mapCattype = fillCategory(0L, vertList, Utils.categoryPath);
         offset += mapCattype.size();
-        System.out.println("mapCategory: " + mapCattype);
+        //System.out.println("mapCategory: " + mapCattype);
 
         mapVenueCategory = fillCategories(offset, vertList, mapCattype, Utils.categoriesPath);
         offset += mapVenueCategory.size();
-        System.out.println("mapCategories: " + mapVenueCategory);
+        //System.out.println("mapCategories: " + mapVenueCategory);
 
         mapVenues = fillVenues(offset, vertList, mapVenueCategory, Utils.venuesPath);
         offset += mapVenues.size();
-        System.out.println("mapVenues: " + mapVenues);
+        //System.out.println("mapVenues: " + mapVenues);
 
         mapStops = fillStops(offset, vertList, mapVenues, Utils.stopPath);
-        System.out.println("mapStops: " + mapStops);
+        //System.out.println("mapStops: " + mapStops);
 
 
         return vertList;
