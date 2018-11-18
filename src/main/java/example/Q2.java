@@ -1,5 +1,6 @@
 package example;
 
+import org.apache.spark.sql.Column;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.graphframes.GraphFrame;
@@ -21,17 +22,35 @@ public class Q2 extends GraphRunnable {
 		String conditionType2 = "s2.vertextype = 0 and v2.vertextype = 2 and c2.vertextype = 4 and cs2.vertextype = 6";
 		String conditionUser = "s1.userid = s2.userid";
 		String conditionDate = "s1.utctimestamp = s2.utctimestamp and s1.tpos < s2.tpos";
-		String conditionVisited = "cs1.cattype = '\"Home\"' and cs2.cattype = '\"Airport\"'";
+		//String conditionVisited = "cs1.cattype = '\"Home\"' and cs2.cattype = '\"Airport\"'";
+		String conditionVisited = "cs1.cattype = '\"Home\"'";
 		String condition = conditionType1 + " and " + conditionType2 + " and " + conditionUser + " and " + conditionDate + " and " + conditionVisited ;
 
 		Dataset<Row> triplets = super.g.find(q).filter(condition);
 		Dataset<Row> filterededges = super.g.edges();
-		Dataset<Row> filteredvertices = triplets.select("s1.id", "s2.id", "v1.id", "v2.id", "c1.id", "c2.id", "cs1.id", "cs2.id", "s1.userid");
 
+		Column c1 = triplets.col("s1.id").as("id");
+		Column c2 = triplets.col("s1.userid").as("userid");
+		Column c3 = triplets.col("cs1.cattype").as("from");
+		Column c4 = triplets.col("cs2.cattype").as("to");
+		Column c5 = triplets.col("s1.tpos").as("tpos1");
+		Column c6 = triplets.col("s2.tpos").as("tpos2");
+
+		//Dataset<Row> filteredvertices = triplets.select("s1.id",  "s1.userid", "cs1.cattype", "cs2.cattype");
+		Dataset<Row> filteredvertices = triplets.select(c1,c2,c3,c4,c5,c6);
 
 		GraphFrame graphFrame = GraphFrame.apply(filteredvertices, filterededges);
-		graphFrame.vertices().printSchema();
-		graphFrame.vertices().show(1000);
+		//graphFrame.vertices().printSchema();
+		//graphFrame.vertices().show(1000);
+
+        graphFrame.vertices().createOrReplaceTempView("v_table");
+        Dataset<Row> newVertices = graphFrame.sqlContext().sql("SELECT id, userid, from || '>' || to, tpos2 - tpos1 from v_table");
+
+        GraphFrame graphFrame2 = GraphFrame.apply(newVertices, filterededges);
+        graphFrame2.vertices().printSchema();
+        graphFrame2.vertices().show(1000);
+
+
 
 	}
 

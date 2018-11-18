@@ -1,9 +1,9 @@
 package example;
 
+import org.apache.spark.sql.Column;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.graphframes.GraphFrame;
-
 
 public class Q3 extends GraphRunnable{
 
@@ -28,12 +28,22 @@ public class Q3 extends GraphRunnable{
 
 		Dataset<Row> triplets = super.g.find(query).filter(condition);
 		Dataset<Row> selectedEdges = super.g.edges();
-		Dataset<Row> selectedVertices = triplets.select("s1.id", "v1.venueid", "v2.venueid", "s1.userid", "s1.tpos", "s2.tpos");
+
+        Column c1 = triplets.col("s1.id").alias("id");
+        Column c2 = triplets.col("v1.venueid").alias("v1");
+        Column c3 = triplets.col("v2.venueid").alias("v2");
+        Column c4 = triplets.col("s1.userid").alias("userid");
+        Column c5 = triplets.col("s1.tpos").alias("tpos1");
+        Column c6 = triplets.col("s2.tpos").alias("tpos2");
+
+        //Dataset<Row> selectedVertices = triplets.select("s1.id", "v1.venueid", "v2.venueid", "s1.userid", "s1.tpos", "s2.tpos"); //ORIGINAL
+        Dataset<Row> selectedVertices = triplets.select(c1,c2,c3,c4,c5,c6);
 
 		//selectedVertices = selectedVertices.filter("s1.tpos = 1 and s2.tpos = 2");
 
 		GraphFrame g = GraphFrame.apply(selectedVertices, selectedEdges);
-		g.vertices().printSchema();
+        System.out.println("Post graphframe apply del schema...");
+        g.vertices().printSchema();
 		g.vertices().show(1000);
 		System.out.println("Total: " + g.vertices().count());
 	}

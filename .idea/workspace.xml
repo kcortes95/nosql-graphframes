@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5f1b1b8-8e3e-49e8-8a1b-b63ee9d68b83" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/example/GraphRunnable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/example/Q1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/example/Q2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/example/Q3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/example/GraphFramesAppMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/example/GraphFramesAppMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainALL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainALL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainQ1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/loader/LoadEdges.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/loader/LoadVertices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/schemas/Edges.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/schemas/Vertex.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/example/Q1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/example/Q1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/example/Q2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/example/Q2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/example/Q3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/example/Q3.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,29 +28,29 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="3" />
+          <entry key="class" value="5" />
           <entry key="iml" value="2" />
-          <entry key="java" value="101" />
+          <entry key="java" value="115" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="3" />
+          <entry key="CLASS" value="5" />
           <entry key="IDEA_MODULE" value="2" />
-          <entry key="JAVA" value="101" />
+          <entry key="JAVA" value="115" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="7914" />
+          <entry key="java" value="8815" />
           <entry key="xml" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="7914" />
+          <entry key="JAVA" value="8815" />
           <entry key="XML" value="9" />
         </counts>
       </usages-collector>
@@ -67,10 +59,24 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMain.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/example/Q2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="633">
+              <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#191#192#0" expanded="true" />
+                <element signature="e#206#207#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/example/Q3.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,19 +85,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainBKP.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/example/Q1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainALL.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="435">
+              <caret line="31" column="66" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="66" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,11 +123,12 @@
         <option value="$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainQ1.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainQ2.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/GraphRunnable.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/Q1.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/Q2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/Q3.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/GraphFramesAppMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainQ3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/Q1BKP.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/Q3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/Q1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/Q2.java" />
       </list>
     </option>
   </component>
@@ -359,7 +360,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542555238629" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542569209196" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="Errors" />
@@ -396,12 +397,12 @@
       <workItem from="1542162736198" duration="1685000" />
       <workItem from="1542214288090" duration="8519000" />
       <workItem from="1542246286974" duration="731000" />
-      <workItem from="1542487736838" duration="22488000" />
+      <workItem from="1542487736838" duration="26803000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35542000" />
+    <option name="totallyTimeSpent" value="39857000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
@@ -463,13 +464,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/models/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="74" selection-start-line="7" selection-start-column="74" selection-end-line="7" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/src.zip!/java/sql/Date.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
@@ -484,17 +478,6 @@
           <folding>
             <element signature="e#1151#1152#0" expanded="true" />
             <element signature="e#1214#1215#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/loader/LoadNewEdges.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="739">
-          <caret line="53" column="18" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#loadCategoriesCategoryEdges#0;class#LoadNewEdges#0" />
           </folding>
         </state>
       </provider>
@@ -524,51 +507,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/schemas/VertexSchema.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="64" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainQ2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="34" selection-start-line="34" selection-end-line="52" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/Q1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#205#206#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/Q3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
-          <folding>
-            <element signature="e#190#191#0" expanded="true" />
-            <element signature="e#205#206#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/Q2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#191#192#0" expanded="true" />
-            <element signature="e#206#207#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -628,6 +570,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="74" selection-start-line="7" selection-start-column="74" selection-end-line="7" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/loader/LoadNewEdges.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="21" column="89" lean-forward="true" selection-start-line="21" selection-start-column="89" selection-end-line="21" selection-end-column="89" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#loadCategoriesCategoryEdges#0;class#LoadNewEdges#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainBKP.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
@@ -635,19 +605,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainALL.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/schemas/VertexSchema.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="165">
+          <caret line="16" column="64" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="64" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMain.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/example/Q1BKP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="75">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-sql_2.11/2.3.2/spark-sql_2.11-2.3.2.jar!/org/apache/spark/sql/Column.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="78" column="13" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainALL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="29" selection-start-line="29" selection-end-line="30" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/graphframes/graphframes/0.6.0-spark2.3-s_2.11/graphframes-0.6.0-spark2.3-s_2.11.jar!/org/graphframes/lib/BFS.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="55" column="16" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
+          <folding>
+            <element signature="e#5899#5900#0" expanded="true" />
+            <element signature="e#5940#5941#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/example/Q3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/example/Q1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="31" column="66" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/example/Q2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#191#192#0" expanded="true" />
+            <element signature="e#206#207#0" expanded="true" />
           </folding>
         </state>
       </provider>
