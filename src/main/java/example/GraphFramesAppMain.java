@@ -38,9 +38,8 @@ public class GraphFramesAppMain {
 				userQuery = new Q3(myGraph);
 				break;
 			case 4:
-				throw new RuntimeException("No esta implementado");
-			case 5:
-				throw new RuntimeException("No esta implementado");
+				userQuery = new Q4(myGraph);
+				break;
 			default:
 				userQuery = new Q3(myGraph);
 				break;
