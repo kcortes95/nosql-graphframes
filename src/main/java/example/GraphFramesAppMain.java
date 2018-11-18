@@ -32,6 +32,11 @@ public class GraphFramesAppMain {
 		GraphFrame myGraph = GraphFrame.apply(vertices, edges);
 
 
+		/*
+		https://docs.databricks.com/spark/latest/graph-analysis/graphframes/user-guide-scala.html
+		 */
+
+
 		String q1 = "(s1)-[e11]->(v1); (v1)-[e12]->(c1); (c1)-[e13]->(cs1);";
 		String q2 = "(s2)-[e21]->(v2); (v2)-[e22]->(c2); (c2)-[e23]->(cs2)";
 		String q = q1 + q2;
