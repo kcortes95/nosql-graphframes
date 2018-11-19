@@ -1,9 +1,16 @@
 package example;
 
+import loader.LoadNewVertices;
+import models.Stop;
 import org.apache.spark.sql.Column;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.graphframes.GraphFrame;
+
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class Q3 extends GraphRunnable{
 
@@ -37,14 +44,37 @@ public class Q3 extends GraphRunnable{
         Column c4 = triplets.col("s1.userid").alias("userid");
         Column c5 = triplets.col("s1.tpos").alias("tpos1");
         Column c6 = triplets.col("s2.tpos").alias("tpos2");
+        Column c7 = triplets.col("s2.utctimestamp").alias("utctimestamp");
 
-        Dataset<Row> selectedVertices = triplets.select(c1,c2,c3,c4,c5,c6);
+        Dataset<Row> selectedVertices = triplets.select(c1,c2,c3,c4,c5,c6,c7);
 
 		GraphFrame graphFrame = GraphFrame.apply(selectedVertices, selectedEdges);
 
+		Dataset<Row> vs = graphFrame.vertices();
+
+        System.out.println("userid | date | path | tpos1 | tpos2");
+
+        for (Iterator<Row> it = vs.toLocalIterator(); it.hasNext(); ) {
+            Row each = it.next();
+            String userid = (String) each.get(3);
+            Long tpos1 = (Long) each.get(4);
+            Long tpos2 = (Long) each.get(5);
+            Date timestamp = (Date) each.get(6);
+
+            List<String> venuesIdRelated = new ArrayList<>();
+
+            for(Long i = tpos1; i <= tpos2; i++){
+                Stop stop = new Stop(userid, "", i.toString());
+                venuesIdRelated.add(LoadNewVertices.getMapStopsVenue().get(stop));
+            }
+
+            System.out.println(userid + " | " + timestamp.toString() + " | " + venuesIdRelated.toString() + " | " + tpos1 + " | " + tpos2);
+
+        }
+
         System.out.println("Resultado...");
-        graphFrame.vertices().printSchema();
-        graphFrame.vertices().show(1000);
+        //graphFrame.vertices().printSchema();
+        //graphFrame.vertices().show(1000);
 		System.out.println("Total: " + graphFrame.vertices().count());
 
 	}

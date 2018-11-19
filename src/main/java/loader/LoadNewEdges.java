@@ -18,7 +18,7 @@ public class LoadNewEdges {
     public static ArrayList<Row> LoadEdges(List<Map> list) {
         ArrayList<Row> edges = new ArrayList<Row>();
 
-        //loadStopStopEdges(LoadNewVertices.getStops(), LoadNewVertices.getStops(Utils.stopPath), edges, Utils.stopPath);
+        //loadStopStopEdges(LoadNewVertices.getStops(), edges, Utils.stopPath);
         loadStopVenuesEdges(LoadNewVertices.getStops(), LoadNewVertices.getVenues(), edges, Utils.stopPath);
         loadVenuesCategoriesEdges(LoadNewVertices.getVenues(), LoadNewVertices.getCategories(), edges, Utils.venuesPath);
         loadCategoriesCategoryEdges(LoadNewVertices.getCategories(), LoadNewVertices.getCategory(), edges, Utils.categoriesPath);
@@ -26,7 +26,7 @@ public class LoadNewEdges {
         return edges;
     }
 
-    private static void loadStopStopEdges(Map<Stop, Long> stops, Map<String, List<Long>> all, ArrayList<Row> edges, String path){
+    private static void loadStopStopEdges(Map<Stop, Long> stops, ArrayList<Row> edges, String path){
 
         try (Stream<String> stream = Files.lines(Paths.get(path))) {
             Object[] arr = stream.toArray();
@@ -39,18 +39,17 @@ public class LoadNewEdges {
                 String tpos = datas[3].replace("'", "");
 
                 Stop stop = new Stop(userid, utctimestamp, tpos);
-                //System.out.println("---START---");
                 Long from = stops.get(stop);
-                //System.out.println("STOP: " + stop + " >>> " + from);
 
-                List<Long> listLong = all.get(userid);
-                //System.out.println(" TODOS LOS LONGS RELACIONADOS: " + listLong);
-                //System.out.println("---END---");
+                Integer tpos_to = Integer.parseInt(tpos) + 1;
 
-                listLong.forEach( e -> {
-                    Long to = e;
+                Stop stop_to = new Stop(userid, utctimestamp, tpos_to.toString());
+                Long to = stops.get(stop_to);
+
+                if(stops.containsKey(stop_to)){
                     edges.add(RowFactory.create(from, to, true, false, false, false, 1));
-                });
+                }
+
 
             }
         } catch (IOException e) {

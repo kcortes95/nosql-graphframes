@@ -23,11 +23,15 @@ public class LoadNewVertices {
     static Map<String, Long> mapVenues;
     static Map<Stop, Long> mapStops;
 
+    static Map<Stop, String> mapStopsVenue;
+
     public static ArrayList<Row> LoadVertices(String pathCatType, String pathVenueCategory, String pathVenues, String pathStops) {
 
         long offset = 0L;
 
         ArrayList<Row> vertList = new ArrayList<>();
+
+        mapStopsVenue = new HashMap<>();
 
         mapCategory = fillCategory(0L, vertList, Utils.categoryPath);
         offset += mapCategory.size();
@@ -41,7 +45,7 @@ public class LoadNewVertices {
         offset += mapVenues.size();
         //System.out.println("mapVenues: " + mapVenues);
 
-        mapStops = fillStops(offset, vertList, mapVenues, Utils.stopPath);
+        mapStops = fillStops(offset, vertList, mapVenues, mapStopsVenue, Utils.stopPath);
         //System.out.println("mapStops: " + mapStops);
 
         return vertList;
@@ -114,7 +118,7 @@ public class LoadNewVertices {
         return mapVenues;
     }
 
-    private static Map<Stop, Long> fillStops(Long offset, ArrayList<Row> vertList, Map<String, Long> mapVenues, String path) {
+    private static Map<Stop, Long> fillStops(Long offset, ArrayList<Row> vertList, Map<String, Long> mapVenues, Map<Stop, String> mapStopsVenue, String path) {
 
         Map<Stop, Long> map = new HashMap<>();
 
@@ -124,7 +128,10 @@ public class LoadNewVertices {
                 String data = (String) arr[(int)(i - offset)];
                 String datas[] = data.split(",");
                 Stop stop = new Stop(datas[0], datas[2], datas[3]);
+                String venueid = datas[1].replace("\"", "");
+
                 map.put(stop, i);
+                mapStopsVenue.put(stop, venueid);
 
                 SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy");
                 String dateString = datas[2];
@@ -199,5 +206,9 @@ public class LoadNewVertices {
 
     public static Map<Stop, Long> getStops() {
         return mapStops;
+    }
+
+    public static Map<Stop, String> getMapStopsVenue() {
+        return mapStopsVenue;
     }
 }
