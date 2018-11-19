@@ -44,7 +44,6 @@ public class LoadNewVertices {
         mapStops = fillStops(offset, vertList, mapVenues, Utils.stopPath);
         //System.out.println("mapStops: " + mapStops);
 
-
         return vertList;
     }
 
@@ -58,7 +57,7 @@ public class LoadNewVertices {
             for(long i = 1 + offset ; i < arr.length + offset; i++){
 
                 String data = (String) arr[(int)i];
-                data = data.replace("'", "");
+                data = data.replace("\"", "");
 
                 vertList.add(RowFactory.create(i,null,null,null,null,null,data,6));
                 mapCattype.put( data, i);
@@ -80,7 +79,7 @@ public class LoadNewVertices {
             for(long i = 1 + offset ; i < arr.length + offset; i++){
                 String data = (String) arr[(int)(i - offset)];
                 String datas[] = data.split(",");
-                String finalData = datas[0].replace("'", "");
+                String finalData = datas[0].replace("\"", "");
 
                 mapVenueCategory.put(finalData, i);
                 vertList.add(RowFactory.create(i,null,null,null,null,finalData,null,4));
@@ -102,7 +101,7 @@ public class LoadNewVertices {
             for(long i = 1 + offset ; i < arr.length + offset; i++){
                 String data = (String) arr[(int)(i - offset)];
                 String datas[] = data.split(",");
-                String finalData = datas[0].replace("'", "");
+                String finalData = datas[0].replace("\"", "");
 
                 mapVenues.put(finalData, i);
                 vertList.add(RowFactory.create(i,null,null,null,finalData,null,null,2));
@@ -166,7 +165,7 @@ public class LoadNewVertices {
             for(long i = 1; i < arr.length; i++){
                 String data = (String) arr[(int)i];
                 String datas[] = data.split(",");
-                String userid = datas[0];
+                String userid = datas[0].replace("'","");
 
                 if (!map.containsKey(userid)){
                     map.put(userid, new ArrayList<>());

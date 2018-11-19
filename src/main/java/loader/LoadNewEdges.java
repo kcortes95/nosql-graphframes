@@ -18,7 +18,7 @@ public class LoadNewEdges {
     public static ArrayList<Row> LoadEdges(List<Map> list) {
         ArrayList<Row> edges = new ArrayList<Row>();
 
-        loadStopStopEdges(LoadNewVertices.getStops(), LoadNewVertices.getStops(Utils.stopPath), edges, Utils.stopPath);
+        //loadStopStopEdges(LoadNewVertices.getStops(), LoadNewVertices.getStops(Utils.stopPath), edges, Utils.stopPath);
         loadStopVenuesEdges(LoadNewVertices.getStops(), LoadNewVertices.getVenues(), edges, Utils.stopPath);
         loadVenuesCategoriesEdges(LoadNewVertices.getVenues(), LoadNewVertices.getCategories(), edges, Utils.venuesPath);
         loadCategoriesCategoryEdges(LoadNewVertices.getCategories(), LoadNewVertices.getCategory(), edges, Utils.categoriesPath);
@@ -34,21 +34,17 @@ public class LoadNewEdges {
                 String data = (String) arr[(int)i];
                 String datas[] = data.split(",");
 
-                //me
                 String userid = datas[0].replace("'", "");
                 String utctimestamp = datas[2].replace("'", "");
                 String tpos = datas[3].replace("'", "");
 
                 Stop stop = new Stop(userid, utctimestamp, tpos);
                 //System.out.println("---START---");
-
                 Long from = stops.get(stop);
-
                 //System.out.println("STOP: " + stop + " >>> " + from);
 
                 List<Long> listLong = all.get(userid);
                 //System.out.println(" TODOS LOS LONGS RELACIONADOS: " + listLong);
-
                 //System.out.println("---END---");
 
                 listLong.forEach( e -> {
@@ -72,7 +68,7 @@ public class LoadNewEdges {
                 String datas[] = data.split(",");
 
                 String userid = datas[0].replace("'", "");
-                String utctimestamp = datas[2].replace("'", "");
+                String utctimestamp = datas[2];
                 String tpos = datas[3].replace("'", "");
 
                 String venueid = datas[1].replace("'", "");
@@ -88,6 +84,7 @@ public class LoadNewEdges {
                 System.out.println( from + " >> " + to);
                 System.out.println("-----");
                 */
+
 
                 edges.add(RowFactory.create(from, to, false, true, false, false, 3));
             }
@@ -105,13 +102,17 @@ public class LoadNewEdges {
                 String data = (String) arr[(int)i];
                 String datas[] = data.split(",");
 
-                String venueid = datas[0].replace("'", "");
-                String category = datas[1].replace("'", "");
+                String venueid = datas[0].replace("\"", "");
+                String category = datas[1].replace("\"", "");
 
                 Long from = venues.get(venueid);
                 Long to = categories.get(category);
 
-                //System.out.println( cats + "(" + from + ")" + " >> " + cat + "(" + to + ")");
+                /*
+                System.out.println("*****");
+                System.out.println( venueid + "(" + from + ")" + " >> " + category + "(" + to + ")");
+                System.out.println("*****");
+                */
 
                 edges.add(RowFactory.create(from, to, false, false, true, false, 5));
             }
@@ -129,13 +130,17 @@ public class LoadNewEdges {
                 String data = (String) arr[(int)i];
                 String datas[] = data.split(",");
 
-                String cats = datas[0].replace("'", "");
-                String cat = datas[1].replace("'", "");
+                String cats = datas[0].replace("\"", "");
+                String cat = datas[1].replace("\"", "");
 
                 Long from = categories.get(cats);
                 Long to = category.get(cat);
 
-                //System.out.println( cats + "(" + from + ")" + " >> " + cat + "(" + to + ")");
+                /*
+                System.out.println("*****");
+                System.out.println( cats + "(" + from + ")" + " >> " + cat + "(" + to + ")");
+                System.out.println("*****");
+                */
 
                 edges.add(RowFactory.create(from, to, false, false, false, true, 7));
             }

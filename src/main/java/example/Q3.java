@@ -23,7 +23,9 @@ public class Q3 extends GraphRunnable{
         String conditionSameUser = "s1.userid = s2.userid";
         String conditionSameVenue = "v1.venueid = v2.venueid";
         String contidionSameDate = "s1.utctimestamp = s2.utctimestamp";
-        String conditionTpos = "s1.tpos = 1 and s2.tpos > s1.tpos";
+        //String contidionSameDate = "true";
+        String conditionTpos = "s2.tpos > s1.tpos";
+        //String conditionTpos = "true";
         String condition = conditionType1 + " and " + conditionType2 + " and " + conditionSameUser + " and " + conditionSameVenue + " and " + contidionSameDate + " and " + conditionTpos;
 
 		Dataset<Row> triplets = super.g.find(query).filter(condition);
