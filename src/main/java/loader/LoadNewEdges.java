@@ -18,9 +18,7 @@ public class LoadNewEdges {
     public static ArrayList<Row> LoadEdges(List<Map> list) {
         ArrayList<Row> edges = new ArrayList<Row>();
 
-
         loadStopStopEdges(LoadNewVertices.getStops(), LoadNewVertices.getStops(Utils.stopPath), edges, Utils.stopPath);
-
         loadStopVenuesEdges(LoadNewVertices.getStops(), LoadNewVertices.getVenues(), edges, Utils.stopPath);
         loadVenuesCategoriesEdges(LoadNewVertices.getVenues(), LoadNewVertices.getCategories(), edges, Utils.venuesPath);
         loadCategoriesCategoryEdges(LoadNewVertices.getCategories(), LoadNewVertices.getCategory(), edges, Utils.categoriesPath);
@@ -37,9 +35,9 @@ public class LoadNewEdges {
                 String datas[] = data.split(",");
 
                 //me
-                String userid = datas[0];
-                String utctimestamp = datas[2];
-                String tpos = datas[3];
+                String userid = datas[0].replace("'", "");
+                String utctimestamp = datas[2].replace("'", "");
+                String tpos = datas[3].replace("'", "");
 
                 Stop stop = new Stop(userid, utctimestamp, tpos);
                 //System.out.println("---START---");
@@ -73,12 +71,11 @@ public class LoadNewEdges {
                 String data = (String) arr[(int)i];
                 String datas[] = data.split(",");
 
-                String userid = datas[0];
-                String utctimestamp = datas[2];
-                String tpos = datas[3];
+                String userid = datas[0].replace("'", "");
+                String utctimestamp = datas[2].replace("'", "");
+                String tpos = datas[3].replace("'", "");
 
-                String venueid = datas[1];
-                venueid = venueid.replace("'", "\"");
+                String venueid = datas[1].replace("'", "");
 
                 Stop stop = new Stop(userid, utctimestamp, tpos);
 
@@ -108,8 +105,8 @@ public class LoadNewEdges {
                 String data = (String) arr[(int)i];
                 String datas[] = data.split(",");
 
-                String venueid = datas[0];
-                String category = datas[1];
+                String venueid = datas[0].replace("'", "");
+                String category = datas[1].replace("'", "");
 
                 Long from = venues.get(venueid);
                 Long to = categories.get(category);
@@ -132,8 +129,8 @@ public class LoadNewEdges {
                 String data = (String) arr[(int)i];
                 String datas[] = data.split(",");
 
-                String cats = datas[0];
-                String cat = datas[1];
+                String cats = datas[0].replace("'", "");
+                String cat = datas[1].replace("'", "");
 
                 Long from = categories.get(cats);
                 Long to = category.get(cat);
