@@ -1,4 +1,4 @@
-package example;
+package ar.edu.itba.nosql;
 
 import loader.LoadNewVertices;
 import models.Stop;
@@ -20,8 +20,10 @@ public class Q3 extends GraphRunnable{
 
 	public void run() {
 
+        long init = System.currentTimeMillis();
 
-		String q1 = "(s1)-[e1]->(v1);";
+
+        String q1 = "(s1)-[e1]->(v1);";
 		String q2 = "(s2)-[e2]->(v2)";
 		String query = q1 + q2;
 
@@ -54,6 +56,8 @@ public class Q3 extends GraphRunnable{
 
         System.out.println("userid | date | path | tpos1 | tpos2");
 
+        long end = 0;
+
         for (Iterator<Row> it = vs.toLocalIterator(); it.hasNext(); ) {
             Row each = it.next();
             String userid = (String) each.get(3);
@@ -68,14 +72,17 @@ public class Q3 extends GraphRunnable{
                 venuesIdRelated.add(LoadNewVertices.getMapStopsVenue().get(stop));
             }
 
-            System.out.println(userid + " | " + timestamp.toString() + " | " + venuesIdRelated.toString() + " | " + tpos1 + " | " + tpos2);
+            end = System.currentTimeMillis();
+
+            System.out.println(userid + " | " + timestamp.toString() + " | " + tpos1 + " | " + tpos2 + " | " + venuesIdRelated.toString() );
 
         }
 
-        System.out.println("Resultado...");
-        //graphFrame.vertices().printSchema();
-        //graphFrame.vertices().show(1000);
-		System.out.println("Total: " + graphFrame.vertices().count());
+
+        System.out.println("****");
+        System.out.println("Total de resultados: " + graphFrame.vertices().count());
+        System.out.println("Total de tiempo en ejecución: " + (end-init) + " ms");
+        System.out.println("****");
 
 	}
 

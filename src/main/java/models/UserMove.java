@@ -20,16 +20,8 @@ public class UserMove {
         return userid;
     }
 
-    public void setUserid(String userid) {
-        this.userid = userid;
-    }
-
     public Date getUtctimestamp() {
         return utctimestamp;
-    }
-
-    public void setUtctimestamp(Date utctimestamp) {
-        this.utctimestamp = utctimestamp;
     }
 
     @Override

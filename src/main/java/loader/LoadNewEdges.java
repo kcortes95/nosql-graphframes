@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 
 public class LoadNewEdges {
 
-    public static ArrayList<Row> LoadEdges(List<Map> list) {
+    public static ArrayList<Row> LoadEdges() {
         ArrayList<Row> edges = new ArrayList<Row>();
 
         //loadStopStopEdges(LoadNewVertices.getStops(), edges, Utils.stopPath);

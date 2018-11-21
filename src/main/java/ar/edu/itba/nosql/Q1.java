@@ -1,4 +1,4 @@
-package example;
+package ar.edu.itba.nosql;
 
 import org.apache.spark.sql.Column;
 import org.apache.spark.sql.Dataset;
@@ -14,6 +14,8 @@ public class Q1 extends GraphRunnable{
 
 	@Override
 	public void run() {
+
+		long init = System.currentTimeMillis();
 
 		String q1 = "(s1)-[e11]->(v1); (v1)-[e12]->(c1); (c1)-[e13]->(cs1);";
 		String q2 = "(s2)-[e21]->(v2); (v2)-[e22]->(c2); (c2)-[e23]->(cs2);";
@@ -52,8 +54,17 @@ public class Q1 extends GraphRunnable{
         graphFrame.vertices().createOrReplaceTempView("v_table");
         Dataset<Row> newVertices = graphFrame.sqlContext().sql("SELECT id, userid, cs1 || ' > ' || cs2 || ' > ' || cs3,  tpos1 || ' > ' || tpos2 || ' > ' || tpos3 from v_table");
         GraphFrame graphFrame2 = GraphFrame.apply(newVertices, filterededges);
-        graphFrame2.vertices().printSchema();
-        graphFrame2.vertices().show(1000);
+
+		long end = System.currentTimeMillis();
+
+		long tot = graphFrame2.vertices().count();
+
+        graphFrame2.vertices().show((int)tot, false);
+
+		System.out.println("****");
+		System.out.println("Total de resultados: " + tot);
+		System.out.println("Total de tiempo en ejecución: " + (end-init) + " ms");
+		System.out.println("****");
 
 	}
 }

@@ -31,6 +31,18 @@ public class LoadNewVertices {
 
         ArrayList<Row> vertList = new ArrayList<>();
 
+        Utils.setStopPath(pathStops);
+        Utils.setVenuesPath(pathVenues);
+        Utils.setCategoriesPath(pathVenueCategory);
+        Utils.setCategoryPath(pathCatType);
+
+        System.out.println("Los vertices se cargan de los archivos...");
+        System.out.println("category: " + Utils.categoryPath);
+        System.out.println("categories: " + Utils.categoriesPath);
+        System.out.println("venues: " + Utils.venuesPath);
+        System.out.println("stops: " + Utils.stopPath);
+        System.out.println("\n\n");
+
         mapStopsVenue = new HashMap<>();
 
         mapCategory = fillCategory(0L, vertList, Utils.categoryPath);

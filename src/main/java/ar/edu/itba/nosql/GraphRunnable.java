@@ -1,4 +1,4 @@
-package example;
+package ar.edu.itba.nosql;
 
 
 import org.graphframes.GraphFrame;
