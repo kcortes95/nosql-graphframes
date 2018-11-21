@@ -2,11 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5f1b1b8-8e3e-49e8-8a1b-b63ee9d68b83" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/example/Q3BKP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/example/Q4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/Q4.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/example/GraphFramesAppMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/example/GraphFramesAppMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/example/Q3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/example/Q3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/example/GraphFramesAppMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/GraphFramesAppMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainALL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainBKP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/example/GraphRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/GraphRunnable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/example/Q1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/Q1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/example/Q2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/Q2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/example/Q3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/Q3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/example/Q3BKP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/example/Q4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/loader/LoadNewEdges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/loader/LoadNewEdges.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/loader/LoadNewVertices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/loader/LoadNewVertices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Minmax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Minmax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/UserMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/UserMove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Utils.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,19 +31,20 @@
     <session id="-872614202">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.6" value="2" />
-          <entry key="project.open.time.8" value="2" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.8" value="3" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="5" />
           <entry key="iml" value="2" />
-          <entry key="java" value="124" />
+          <entry key="java" value="185" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
@@ -39,19 +52,19 @@
         <counts>
           <entry key="CLASS" value="5" />
           <entry key="IDEA_MODULE" value="2" />
-          <entry key="JAVA" value="124" />
+          <entry key="JAVA" value="185" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="9392" />
+          <entry key="java" value="13537" />
           <entry key="xml" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9392" />
+          <entry key="JAVA" value="13537" />
           <entry key="XML" value="9" />
         </counts>
       </usages-collector>
@@ -59,11 +72,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/example/Q3.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/Q4.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="26" column="186" selection-start-line="26" selection-start-column="186" selection-end-line="26" selection-end-column="186" />
+            <state relative-caret-position="618">
+              <caret line="66" column="46" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/Q1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="734">
+              <caret line="61" column="51" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -71,29 +93,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/example/Q4.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/Q2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
+            <state relative-caret-position="650">
+              <caret line="53" column="46" lean-forward="true" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/example/Q3BKP.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/Q3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
+            <state relative-caret-position="438">
+              <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -106,10 +122,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>replace</find>
+      <find>int</find>
+      <find>LoadEdges</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -118,24 +141,30 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/models/Utils.java" />
         <option value="$PROJECT_DIR$/src/main/java/schemas/VertexSchema.java" />
-        <option value="$PROJECT_DIR$/src/main/java/models/Stop.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainBKP.java" />
-        <option value="$PROJECT_DIR$/src/main/java/loader/LoadNewEdges.java" />
-        <option value="$PROJECT_DIR$/src/main/java/loader/LoadNewVertices.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainALL.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainQ1.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainQ2.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/GraphRunnable.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainQ3.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/Q1BKP.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/Q1.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/Q2.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/Q3BKP.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/Q3.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/GraphFramesAppMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/models/Stop.java" />
+        <option value="$PROJECT_DIR$/src/main/java/models/Minimax.java" />
+        <option value="$PROJECT_DIR$/src/main/java/models/Minmax.java" />
+        <option value="$PROJECT_DIR$/src/main/java/models/UserMove.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/Q2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/Q3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/Q1.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/Q4.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/Q4.java" />
+        <option value="$PROJECT_DIR$/src/main/java/models/Utils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/loader/LoadNewEdges.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/GraphFramesAppMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/loader/LoadNewVertices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/Q1.java" />
       </list>
     </option>
   </component>
@@ -152,7 +181,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1680" />
     <option name="height" value="1050" />
   </component>
@@ -299,6 +328,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -330,7 +360,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="nosql" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="graphframes-ex8" type="b2602c69:ProjectViewProjectNode" />
@@ -361,13 +391,12 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542578673329" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542760038185" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="Errors" />
@@ -404,18 +433,21 @@
       <workItem from="1542162736198" duration="1685000" />
       <workItem from="1542214288090" duration="8519000" />
       <workItem from="1542246286974" duration="731000" />
-      <workItem from="1542487736838" duration="29948000" />
+      <workItem from="1542487736838" duration="30182000" />
+      <workItem from="1542581387244" duration="6000" />
+      <workItem from="1542640157305" duration="16413000" />
+      <workItem from="1542751999954" duration="4173000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43002000" />
+    <option name="totallyTimeSpent" value="63828000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989796" visible="true" weight="0.18376069" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989796" visible="true" weight="0.1892552" />
       <window_info id="Structure" order="1" sideWeight="0.50102043" side_tool="true" weight="0.18376069" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -423,7 +455,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3298122" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32959184" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -478,28 +510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/models/Stop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="57" column="85" selection-start-line="57" selection-start-column="85" selection-end-line="57" selection-end-column="85" />
-          <folding>
-            <element signature="e#1151#1152#0" expanded="true" />
-            <element signature="e#1214#1215#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/loader/LoadNewVertices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getMaps#0;class#LoadNewVertices#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/schemas/EdgeSchema.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -514,108 +524,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainQ2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="34" selection-start-line="34" selection-end-line="52" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphRunnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-          <folding>
-            <element signature="e#163#164#0" expanded="true" />
-            <element signature="e#189#190#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/schemas/Edges.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/schemas/Vertex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/loader/LoadVertices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="18" column="94" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/loader/LoadEdges.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainQ1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainQ3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/models/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="74" selection-start-line="7" selection-start-column="74" selection-end-line="7" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/loader/LoadNewEdges.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="21" column="89" lean-forward="true" selection-start-line="21" selection-start-column="89" selection-end-line="21" selection-end-column="89" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#loadCategoriesCategoryEdges#0;class#LoadNewEdges#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainBKP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/schemas/VertexSchema.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="64" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/Q1BKP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainQ2.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/schemas/Edges.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/schemas/Vertex.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/loader/LoadVertices.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/loader/LoadEdges.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainQ1.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainQ3.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/example/Q1BKP.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-sql_2.11/2.3.2/spark-sql_2.11-2.3.2.jar!/org/apache/spark/sql/Column.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
@@ -623,7 +539,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMainALL.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/GraphFramesAppMainALL.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="29" selection-start-line="29" selection-end-line="30" selection-end-column="106" />
@@ -634,66 +550,156 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
           <caret line="55" column="16" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
-          <folding>
-            <element signature="e#5899#5900#0" expanded="true" />
-            <element signature="e#5940#5941#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/Q2.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/schemas/VertexSchema.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#191#192#0" expanded="true" />
-            <element signature="e#206#207#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="240">
+          <caret line="21" column="62" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/Q1.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/Stop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="53" column="70" lean-forward="true" selection-start-line="53" selection-start-column="70" selection-end-line="53" selection-end-column="70" />
+        <state relative-caret-position="120">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/GraphRunnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/Minmax.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#724#725#0" expanded="true" />
+            <element signature="e#750#751#0" expanded="true" />
+            <element signature="e#787#788#0" expanded="true" />
+            <element signature="e#820#821#0" expanded="true" />
+            <element signature="e#848#849#0" expanded="true" />
+            <element signature="e#874#875#0" expanded="true" />
+            <element signature="e#911#912#0" expanded="true" />
+            <element signature="e#944#945#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/Q3BKP.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/UserMove.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#987#988#0" expanded="true" />
+            <element signature="e#1044#1045#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/Q3.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/GraphFramesAppMainBKP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="26" column="186" selection-start-line="26" selection-start-column="186" selection-end-line="26" selection-end-column="186" />
+        <state relative-caret-position="258">
+          <caret line="29" column="94" selection-start-line="29" selection-start-column="94" selection-end-line="29" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/GraphFramesAppMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/GraphFramesAppMain.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/loader/LoadNewVertices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
+        <state relative-caret-position="-1277">
+          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getMaps#0;class#LoadNewVertices#0" />
+            <element signature="e#7239#7240#0" expanded="true" />
+            <element signature="e#7275#7276#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/loader/LoadNewEdges.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/Q4.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
+        <state relative-caret-position="150">
+          <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+          <folding>
+            <element signature="e#537#538#0" expanded="true" />
+            <element signature="e#604#605#0" expanded="true" />
+            <element signature="e#657#658#0" expanded="true" />
+            <element signature="e#716#717#0" expanded="true" />
+            <element signature="e#761#762#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#857#858#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/Q2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="53" column="46" lean-forward="true" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/Q3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/Q3BKP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/Q1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="734">
+          <caret line="61" column="51" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ar/edu/itba/nosql/Q4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="66" column="46" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
         </state>
       </provider>
     </entry>

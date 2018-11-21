@@ -1,4 +1,4 @@
-package example;
+package ar.edu.itba.nosql;
 
 import java.text.ParseException;
 
@@ -19,8 +19,13 @@ public class GraphFramesAppMain {
 		JavaSparkContext sparkContext = new JavaSparkContext(sp.sparkContext());
 		SQLContext sqlContext = new SQLContext(sp);
 
-		Dataset<Row> vertices = sqlContext.createDataFrame(sparkContext.parallelize(LoadNewVertices.LoadVertices("","","","")), VertexSchema.CreateVertex());
-		Dataset<Row> edges = sqlContext.createDataFrame(sparkContext.parallelize(LoadNewEdges.LoadEdges(LoadNewVertices.getMaps())), EdgeSchema.CreateEdge());
+		String pathCatType = args[1];
+		String pathVenueCategory = args[2];
+		String pathVenues = args[3];
+		String pathStops = args[4];
+
+		Dataset<Row> vertices = sqlContext.createDataFrame(sparkContext.parallelize(LoadNewVertices.LoadVertices(pathCatType,pathVenueCategory,pathVenues,pathStops)), VertexSchema.CreateVertex());
+		Dataset<Row> edges = sqlContext.createDataFrame(sparkContext.parallelize(LoadNewEdges.LoadEdges()), EdgeSchema.CreateEdge());
 
 		GraphFrame myGraph = GraphFrame.apply(vertices, edges);
 

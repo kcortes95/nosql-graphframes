@@ -1,4 +1,4 @@
-package example;
+package ar.edu.itba.nosql;
 
 import org.apache.spark.sql.Column;
 import org.apache.spark.sql.Dataset;
@@ -15,6 +15,8 @@ public class Q1 extends GraphRunnable{
 	@Override
 	public void run() {
 
+		long init = System.currentTimeMillis();
+
 		String q1 = "(s1)-[e11]->(v1); (v1)-[e12]->(c1); (c1)-[e13]->(cs1);";
 		String q2 = "(s2)-[e21]->(v2); (v2)-[e22]->(c2); (c2)-[e23]->(cs2);";
 		String q3 = "(s3)-[e31]->(v3); (v3)-[e32]->(c3); (c3)-[e33]->(cs3)";
@@ -23,8 +25,8 @@ public class Q1 extends GraphRunnable{
 		String conditionType1 = "s1.vertextype = 0 and v1.vertextype = 2 and c1.vertextype = 4 and cs1.vertextype = 6";
 		String conditionType2 = "s2.vertextype = 0 and v2.vertextype = 2 and c2.vertextype = 4 and cs2.vertextype = 6";
 		String conditionType3 = "s3.vertextype = 0 and v3.vertextype = 2 and c3.vertextype = 4 and cs3.vertextype = 6";
-		//String conditionTraj = "cs1.cattype = '\"Home\"' and cs2.cattype = '\"Station\"' and cs3.cattype = '\"Airport\"'"; //ORIGINAL
-		String conditionTraj = "cs1.cattype = '\"Home\"'";
+		String conditionTraj = "cs1.cattype = 'Home' and cs2.cattype = 'Station' and cs3.cattype = 'Airport'"; //ORIGINAL
+		//String conditionTraj = "cs1.cattype = 'Home'";
 		String conditionConsecutive = "s2.tpos = s1.tpos + 1 and s3.tpos = s2.tpos + 1";
 		String conditionUser = "s1.userid = s2.userid and s1.userid = s3.userid";
 		String condition = conditionType1 + " and " + conditionType2 + " and " + conditionType3 + " and " + conditionTraj + " and " + conditionConsecutive + " and " + conditionUser;
@@ -50,10 +52,19 @@ public class Q1 extends GraphRunnable{
 		//graphFrame.vertices().show(1000);
 
         graphFrame.vertices().createOrReplaceTempView("v_table");
-        Dataset<Row> newVertices = graphFrame.sqlContext().sql("SELECT id, userid, cs1 || '>' || cs2 || '>' || cs3 from v_table");
+        Dataset<Row> newVertices = graphFrame.sqlContext().sql("SELECT id, userid, cs1 || ' > ' || cs2 || ' > ' || cs3,  tpos1 || ' > ' || tpos2 || ' > ' || tpos3 from v_table");
         GraphFrame graphFrame2 = GraphFrame.apply(newVertices, filterededges);
-        graphFrame2.vertices().printSchema();
-        graphFrame2.vertices().show(1000);
+
+		long end = System.currentTimeMillis();
+
+		long tot = graphFrame2.vertices().count();
+
+        graphFrame2.vertices().show((int)tot, false);
+
+		System.out.println("****");
+		System.out.println("Total de resultados: " + tot);
+		System.out.println("Total de tiempo en ejecución: " + (end-init) + " ms");
+		System.out.println("****");
 
 	}
 }

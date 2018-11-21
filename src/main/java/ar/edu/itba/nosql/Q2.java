@@ -1,4 +1,4 @@
-package example;
+package ar.edu.itba.nosql;
 
 import org.apache.spark.sql.Column;
 import org.apache.spark.sql.Dataset;
@@ -14,6 +14,8 @@ public class Q2 extends GraphRunnable {
 
 	public void run() {
 
+		long init = System.currentTimeMillis();
+
 		String q1 = "(s1)-[e11]->(v1); (v1)-[e12]->(c1); (c1)-[e13]->(cs1);";
 		String q2 = "(s2)-[e21]->(v2); (v2)-[e22]->(c2); (c2)-[e23]->(cs2)";
 		String q = q1 + q2;
@@ -22,8 +24,8 @@ public class Q2 extends GraphRunnable {
 		String conditionType2 = "s2.vertextype = 0 and v2.vertextype = 2 and c2.vertextype = 4 and cs2.vertextype = 6";
 		String conditionUser = "s1.userid = s2.userid";
 		String conditionDate = "s1.utctimestamp = s2.utctimestamp and s1.tpos < s2.tpos";
-		//String conditionVisited = "cs1.cattype = '\"Home\"' and cs2.cattype = '\"Airport\"'";
-		String conditionVisited = "cs1.cattype = '\"Home\"'";
+		String conditionVisited = "cs1.cattype = 'Home' and cs2.cattype = 'Airport'";
+		//String conditionVisited = "cs1.cattype = 'Home'";
 		String condition = conditionType1 + " and " + conditionType2 + " and " + conditionUser + " and " + conditionDate + " and " + conditionVisited ;
 
 		Dataset<Row> triplets = super.g.find(q).filter(condition);
@@ -44,11 +46,23 @@ public class Q2 extends GraphRunnable {
 		//graphFrame.vertices().show(1000);
 
         graphFrame.vertices().createOrReplaceTempView("v_table");
-        Dataset<Row> newVertices = graphFrame.sqlContext().sql("SELECT id, userid, from || '>' || to, tpos2 - tpos1 from v_table");
+        Dataset<Row> newVertices = graphFrame.sqlContext().sql("SELECT id, userid, from || '>' || to, tpos1, tpos2, tpos2 - tpos1 from v_table order by userid asc");
 
         GraphFrame graphFrame2 = GraphFrame.apply(newVertices, filterededges);
         graphFrame2.vertices().printSchema();
-        graphFrame2.vertices().show(1000);
+
+		long end = System.currentTimeMillis();
+
+        long tot = graphFrame2.vertices().count();
+
+        graphFrame2.vertices().show((int) tot, false);
+
+		System.out.println("****");
+		System.out.println("Total de resultados: " + tot);
+		System.out.println("Total de tiempo en ejecución: " + (end-init) + " ms");
+		System.out.println("****");
+
+
 
 
 
