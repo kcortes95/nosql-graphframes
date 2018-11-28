@@ -10,12 +10,9 @@ import java.util.List;
 public class VertexSchema {
 
     public static StructType CreateVertex() {
-        List<StructField> vertFields = new ArrayList<StructField>();
+        List<StructField> vertFields = new ArrayList<>();
 
         vertFields.add(DataTypes.createStructField("id", DataTypes.LongType, false));
-        vertFields.add(DataTypes.createStructField("userid", DataTypes.StringType, true));
-        vertFields.add(DataTypes.createStructField("utctimestamp", DataTypes.DateType, true));
-        vertFields.add(DataTypes.createStructField("tpos", DataTypes.LongType, true));
         vertFields.add(DataTypes.createStructField("venueid", DataTypes.StringType, true));
         vertFields.add(DataTypes.createStructField("venuecategory", DataTypes.StringType, true));
         vertFields.add(DataTypes.createStructField("cattype", DataTypes.StringType, true));

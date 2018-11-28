@@ -10,15 +10,14 @@ import java.util.List;
 public class EdgeSchema {
 
     public static StructType CreateEdge() {
-        List<StructField> edgeFields = new ArrayList<StructField>();
+        List<StructField> edgeFields = new ArrayList<>();
 
-        edgeFields.add(DataTypes.createStructField("src", DataTypes.LongType, true));
-        edgeFields.add(DataTypes.createStructField("dst", DataTypes.LongType, true));
-        edgeFields.add(DataTypes.createStructField("trajStep", DataTypes.BooleanType, true));
-        edgeFields.add(DataTypes.createStructField("isVenue", DataTypes.BooleanType, true));
+        edgeFields.add(DataTypes.createStructField("src", DataTypes.LongType, false));
+        edgeFields.add(DataTypes.createStructField("dst", DataTypes.LongType, false));
+        edgeFields.add(DataTypes.createStructField("neighbour", DataTypes.BooleanType, true));
         edgeFields.add(DataTypes.createStructField("hasCategory", DataTypes.BooleanType, true));
         edgeFields.add(DataTypes.createStructField("subCategoryOf", DataTypes.BooleanType, true));
-        edgeFields.add(DataTypes.createStructField("edgetype", DataTypes.IntegerType, true));
+        edgeFields.add(DataTypes.createStructField("edgetype", DataTypes.IntegerType, false));
 
         return DataTypes.createStructType(edgeFields);
     }
