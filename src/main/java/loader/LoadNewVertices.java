@@ -109,8 +109,8 @@ public class LoadNewVertices {
             for(int i = 1 ; i < arr.length; i++){
                 String data = (String) arr[i];
                 String datas[] = data.split(",");
-                Long latitude = Long.parseLong(datas[2].replace("\"", ""));
-                Long longitude = Long.parseLong(datas[3].replace("\"", ""));
+                Double latitude = Double.parseDouble(datas[2].replace("\"", ""));
+                Double longitude = Double.parseDouble(datas[3].replace("\"", ""));
                 String id = datas[0].replace("\"", "");
 
                 venues.add(new Venue(id, latitude, longitude));
