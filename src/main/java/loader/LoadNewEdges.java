@@ -1,5 +1,6 @@
 package loader;
 
+import cellindexmethod.Cell;
 import cellindexmethod.Grid;
 import models.Utils;
 import models.Venue;
@@ -16,12 +17,12 @@ import java.util.stream.Stream;
 
 public class LoadNewEdges {
 
-	public static ArrayList<Row> LoadEdges() {
+	public static ArrayList<Row> LoadEdges(double maxDistance) {
 		ArrayList<Row> edges = new ArrayList<>();
 
-		loadVenuesCategoriesEdges(LoadNewVertices.getVenues(), LoadNewVertices.getCategories(), edges, Utils.venuesPath);
-		loadCategoriesCategoryEdges(LoadNewVertices.getCategories(), LoadNewVertices.getCategory(), edges, Utils.categoriesPath);
-		loadVenueVenueEdges(LoadNewVertices.getVenues(), LoadNewVertices.getGrid(), edges);
+		//loadVenuesCategoriesEdges(LoadNewVertices.getVenues(), LoadNewVertices.getCategories(), edges, Utils.venuesPath);
+		//loadCategoriesCategoryEdges(LoadNewVertices.getCategories(), LoadNewVertices.getCategory(), edges, Utils.categoriesPath);
+		loadVenueVenueEdges(LoadNewVertices.getVenues(), LoadNewVertices.getGrid(), edges, maxDistance);
 
 		return edges;
 	}
@@ -39,12 +40,6 @@ public class LoadNewEdges {
 
 				Long from = venues.get(venueid);
 				Long to = categories.get(category);
-
-                /*
-                System.out.println("*****");
-                System.out.println( venueid + "(" + from + ")" + " >> " + category + "(" + to + ")");
-                System.out.println("*****");
-                */
 
 				edges.add(RowFactory.create(from, to, false, true, false, EdgeType.VENUE_TO_SUBCATEGORY.getValue()));
 			}
@@ -69,12 +64,6 @@ public class LoadNewEdges {
 				Long from = categories.get(cats);
 				Long to = category.get(cat);
 
-                /*
-                System.out.println("*****");
-                System.out.println( cats + "(" + from + ")" + " >> " + cat + "(" + to + ")");
-                System.out.println("*****");
-                */
-
 				edges.add(RowFactory.create(from, to, false, false, true, EdgeType.SUBCATEGORY_TO_CATEGORY.getValue()));
 			}
 		} catch (IOException e) {
@@ -83,12 +72,25 @@ public class LoadNewEdges {
 		}
 	}
 
-	private static void loadVenueVenueEdges(Map<String, Long> venues, Grid grid, ArrayList<Row> edges) {
+	private static void loadVenueVenueEdges(Map<String, Long> venues, Grid grid, ArrayList<Row> edges, double maxDistance) {
 		for (int i = 0; i < grid.getM(); i++) {
 			for (int j = 0; j < grid.getM(); j++) {
-				System.out.print(grid.getCell(i, j) + " ");
+				for (Venue v : grid.getCell(i, j).getVenues()) {
+					for (Venue v2 : grid.getCell(i, j).getVenues()) {
+						if (!v.equals(v2) && v.distance(v2) <= maxDistance) {
+							edges.add(RowFactory.create(venues.get(v.getId()), venues.get(v2.getId()), true, false, false, EdgeType.VENUE_TO_VENUE.getValue()));
+						}
+					}
+					for (Cell c : grid.getCell(i, j).getNeighbours()) {
+						for (Venue v2 : c.getVenues()) {
+							if (!v.equals(v2) && v.distance(v2) <= maxDistance) {
+								edges.add(RowFactory.create(venues.get(v.getId()), venues.get(v2.getId()), true, false, false, EdgeType.VENUE_TO_VENUE.getValue()));
+								edges.add(RowFactory.create(venues.get(v2.getId()), venues.get(v.getId()), true, false, false, EdgeType.VENUE_TO_VENUE.getValue()));
+							}
+						}
+					}
+				}
 			}
-			System.out.println();
 		}
 	}
 }

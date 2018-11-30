@@ -26,7 +26,7 @@ public class Venue {
 	}
 
 	public double distance(Venue other) {
-		double R = 6371;
+		double R = 6371000;
 		double radLong1, radLong2, radLat1, radLat2;
 		radLong1 = degToRad(longitude);
 		radLong2 = degToRad(other.getLongitude());

@@ -17,11 +17,12 @@ public class LoadNewVertices {
 
     // M --> cuantas celdas quiero
     // Area de + - 50km x 50km
-    private static int M = 100;
+    private static int M = 250;
     private static Grid grid;
     private static Map<String, Long> mapCategory;
     private static Map<String, Long> mapCategories;
     private static Map<String, Long> mapVenues;
+    private static Map<String, Venue> idToVenue;
 
     public static ArrayList<Row> LoadVertices(String pathCatType, String pathVenueCategory, String pathVenues) {
 
@@ -39,17 +40,13 @@ public class LoadNewVertices {
         System.out.println("venues: " + Utils.venuesPath);
         System.out.println("\n\n");
 
-        mapCategory = fillCategory(0, vertList, Utils.categoryPath);
-        offset += mapCategory.size();
-        //System.out.println("mapCategory: " + mapCategory);
-
-        mapCategories = fillCategories(offset, vertList, Utils.categoriesPath);
-        offset += mapCategories.size();
-        //System.out.println("mapCategories: " + mapCategories);
+//        mapCategory = fillCategory(0, vertList, Utils.categoryPath);
+//        offset += mapCategory.size();
+//
+//        mapCategories = fillCategories(offset, vertList, Utils.categoriesPath);
+//        offset += mapCategories.size();
 
         mapVenues = fillVenues(offset, vertList, Utils.venuesPath);
-        offset += mapVenues.size();
-        //System.out.println("mapVenues: " + mapVenues);
 
         return vertList;
     }
@@ -66,7 +63,7 @@ public class LoadNewVertices {
                 String data = (String) arr[i];
                 data = data.replace("\"", "");
 
-                vertList.add(RowFactory.create(i,null,null,null,null,null,data,6));
+                vertList.add(RowFactory.create((long)i,null,null,data,6));
                 mapCattype.put( data, i+offset);
             }
         } catch (IOException e) {
@@ -89,7 +86,7 @@ public class LoadNewVertices {
                 String finalData = datas[0].replace("\"", "");
 
                 mapVenueCategory.put(finalData, i+offset);
-                vertList.add(RowFactory.create(i,null,null,null,null,finalData,null,4));
+                vertList.add(RowFactory.create((long)i,null,finalData,null,4));
             }
         } catch (IOException e) {
             System.out.println("Tiro exception a la fillCategories + " + e);
@@ -102,6 +99,7 @@ public class LoadNewVertices {
     private static Map<String, Long> fillVenues(long offset, ArrayList<Row> vertList, String path) {
 
         Map<String, Long> mapVenues = new HashMap<>();
+        idToVenue = new HashMap<>();
         Set<Venue> venues = new HashSet<>();
 
         try (Stream<String> stream = Files.lines(Paths.get(path))) {
@@ -113,9 +111,11 @@ public class LoadNewVertices {
                 Double longitude = Double.parseDouble(datas[3].replace("\"", ""));
                 String id = datas[0].replace("\"", "");
 
-                venues.add(new Venue(id, latitude, longitude));
+                Venue v = new Venue(id, latitude, longitude);
+                venues.add(v);
                 mapVenues.put(id, i+offset);
-                vertList.add(RowFactory.create(i,null,null,null,id,null,null,2));
+                idToVenue.put(id, v);
+                vertList.add(RowFactory.create((long)i,id,null,null,2));
             }
         } catch (IOException e) {
             System.out.println("Tiro exception a la fillVenues + " + e);
@@ -136,6 +136,10 @@ public class LoadNewVertices {
 
     public static Map<String, Long> getVenues() {
         return mapVenues;
+    }
+
+    public static Map<String, Venue> getIdToVenue() {
+        return idToVenue;
     }
 
     public static Grid getGrid() {

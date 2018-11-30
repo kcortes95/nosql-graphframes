@@ -17,7 +17,7 @@ public abstract class Grid {
 	private int M;
 
 	public Grid(int M, Set<Venue> venues) {
-		this.L = Math.max(maxLat - minLat, maxLon - minLon);
+		this.L = Math.max(maxLat - minLat + 0.01, maxLon - minLon + 0.01);
 		this.M = M;
 		cells = new Cell[M][M];
 		for (int i = 0; i < M; i++) {
@@ -34,7 +34,7 @@ public abstract class Grid {
 	private void insertVenues(Set<Venue> venues) {
 		for (Venue v : venues) {
 			int x = (int) (Math.floor((v.getLatitude() - minLat) / (L / M)));
-			int y = (int) (Math.floor(v.getLongitude() - minLon / (L / M)));
+			int y = (int) (Math.floor((v.getLongitude() - minLon) / (L / M)));
 			//Habilitar el codigo de abajo para ver las posiciones reales, y en la grilla de las particulas
 			/*
 			System.out.println("x: " + p.getPosition().getX() + " - y: " + p.getPosition().getY());

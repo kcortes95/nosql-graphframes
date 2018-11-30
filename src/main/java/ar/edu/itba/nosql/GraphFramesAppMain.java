@@ -2,6 +2,7 @@ package ar.edu.itba.nosql;
 
 import java.text.ParseException;
 
+import cellindexmethod.Grid;
 import loader.LoadNewEdges;
 import loader.LoadNewVertices;
 import org.apache.spark.api.java.JavaSparkContext;
@@ -19,38 +20,24 @@ public class GraphFramesAppMain {
 		JavaSparkContext sparkContext = new JavaSparkContext(sp.sparkContext());
 		SQLContext sqlContext = new SQLContext(sp);
 
+		double maxDistance = Double.parseDouble(args[0]);
 		String pathCatType = args[1];
 		String pathVenueCategory = args[2];
 		String pathVenues = args[3];
 
+
+		long start = System.currentTimeMillis();
 		Dataset<Row> vertices = sqlContext.createDataFrame(sparkContext.parallelize(
-				LoadNewVertices.LoadVertices(pathCatType,pathVenueCategory,pathVenues)), VertexSchema.CreateVertex());
+				LoadNewVertices.LoadVertices(pathCatType, pathVenueCategory, pathVenues)), VertexSchema.CreateVertex());
 		Dataset<Row> edges = sqlContext.createDataFrame(sparkContext.parallelize(
-				LoadNewEdges.LoadEdges()), EdgeSchema.CreateEdge());
+				LoadNewEdges.LoadEdges(maxDistance)), EdgeSchema.CreateEdge());
 
 		GraphFrame myGraph = GraphFrame.apply(vertices, edges);
 
+		System.out.println("Time taken: " + (System.currentTimeMillis() - start) / 1000.0);
+
+
 		GraphRunnable userQuery = new Q1(myGraph);
-		Integer userOption = Integer.parseInt(args[0]);
-
-//		switch (userOption){
-//			case 1:
-//				userQuery = new Q1(myGraph);
-//				break;
-//			case 2:
-//				userQuery = new Q2(myGraph);
-//				break;
-//			case 3:
-//				userQuery = new Q3(myGraph);
-//				break;
-//			case 4:
-//				userQuery = new Q4(myGraph);
-//				break;
-//			default:
-//				userQuery = new Q1(myGraph);
-//				break;
-//		}
-
 		userQuery.run();
 		sparkContext.close();
 
