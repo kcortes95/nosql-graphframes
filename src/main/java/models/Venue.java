@@ -39,6 +39,20 @@ public class Venue {
 		return R * dist;
 	}
 
+	public double distance(double lat, double lng) {
+		double R = 6371000;
+		double radLong1, radLong2, radLat1, radLat2;
+		radLong1 = degToRad(longitude);
+		radLong2 = degToRad(lng);
+		radLat1 = degToRad(latitude);
+		radLat2 = degToRad(lat);
+		double delta = radLat1 - radLat2;
+		double lambda = radLong1 - radLong2;
+		double dist = Math.sin(delta/2) * Math.sin(delta/2) + Math.cos(radLat1) * Math.cos(radLat2) * Math.sin(lambda/2) * Math.sin(lambda/2);
+		dist = 2 * Math.atan2(Math.sqrt(dist), Math.sqrt(1-dist));
+		return R * dist;
+	}
+
 	private double degToRad(double degree) {
 		return degree * Math.PI/180;
 	}
@@ -53,5 +67,14 @@ public class Venue {
 
 	public Double getLongitude() {
 		return longitude;
+	}
+
+	@Override
+	public String toString() {
+		return "{" +
+				"id='" + id +
+				", latitude=" + latitude +
+				", longitude=" + longitude +
+				'}';
 	}
 }

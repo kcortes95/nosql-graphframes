@@ -12,9 +12,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-public class Q4 extends GraphRunnable{
+public class OLDQ4 extends GraphRunnable{
 
-	public Q4(GraphFrame g) {
+	public OLDQ4(GraphFrame g) {
 		super(g);
 	}
 

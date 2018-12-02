@@ -16,7 +16,7 @@ public class GraphFramesAppMain {
 
 	public static void main(String[] args) throws ParseException {
 
-		SparkSession sp = SparkSession.builder().appName("TP NoSQL - GraphFrames").getOrCreate();
+		SparkSession sp = SparkSession.builder().appName("TP FINAL NoSQL - GraphFrames").getOrCreate();
 		JavaSparkContext sparkContext = new JavaSparkContext(sp.sparkContext());
 		SQLContext sqlContext = new SQLContext(sp);
 
@@ -38,7 +38,12 @@ public class GraphFramesAppMain {
 
 
 		GraphRunnable userQuery = new Q1(myGraph);
+		GraphRunnable userQuery2 = new Q2(myGraph);
+
 		userQuery.run();
+		System.out.println("********COMIENZA Q2********");
+		userQuery2.run();
+
 		sparkContext.close();
 
 	}

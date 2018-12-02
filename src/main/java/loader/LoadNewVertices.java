@@ -19,6 +19,7 @@ public class LoadNewVertices {
     // Area de + - 50km x 50km
     private static int M = 250;
     private static Grid grid;
+
     private static Map<String, Long> mapCategory;
     private static Map<String, Long> mapCategories;
     private static Map<String, Long> mapVenues;
@@ -26,7 +27,7 @@ public class LoadNewVertices {
 
     public static ArrayList<Row> LoadVertices(String pathCatType, String pathVenueCategory, String pathVenues) {
 
-        int offset = 0;
+        long offset = 0;
 
         ArrayList<Row> vertList = new ArrayList<>();
 
@@ -40,11 +41,16 @@ public class LoadNewVertices {
         System.out.println("venues: " + Utils.venuesPath);
         System.out.println("\n\n");
 
-//        mapCategory = fillCategory(0, vertList, Utils.categoryPath);
-//        offset += mapCategory.size();
-//
-//        mapCategories = fillCategories(offset, vertList, Utils.categoriesPath);
-//        offset += mapCategories.size();
+        /*
+        mapCategory = fillCategory(0L, vertList, Utils.categoryPath);
+        offset += mapCategory.size();
+        */
+
+        /*
+        mapCategories = fillCategories(offset, vertList, Utils.categoriesPath);
+        //System.out.println(mapCategories);
+        offset += mapCategories.size();
+        */
 
         mapVenues = fillVenues(offset, vertList, Utils.venuesPath);
 
@@ -52,19 +58,19 @@ public class LoadNewVertices {
     }
 
 
-    private static Map<String, Long> fillCategory(long offset, ArrayList<Row> vertList, String path) {
+    private static Map<String, Long> fillCategory(Long offset, ArrayList<Row> vertList, String path) {
 
         Map<String, Long> mapCattype = new HashMap<>();
 
         try (Stream<String> stream = Files.lines(Paths.get(path))) {
             Object[] arr = stream.toArray();
-            for(int i = 1; i < arr.length; i++){
+            for(long i = 1 + offset ; i < arr.length + offset; i++){
 
-                String data = (String) arr[i];
+                String data = (String) arr[(int)i];
                 data = data.replace("\"", "");
 
-                vertList.add(RowFactory.create((long)i,null,null,data,6));
-                mapCattype.put( data, i+offset);
+                vertList.add(RowFactory.create(i,null,null,data,6));
+                mapCattype.put( data, i);
             }
         } catch (IOException e) {
             System.out.println("Tiro exception a la fillCategory + " + e);
@@ -74,19 +80,19 @@ public class LoadNewVertices {
         return mapCattype;
     }
 
-    private static Map<String, Long> fillCategories(long offset, ArrayList<Row> vertList, String path) {
+    private static Map<String, Long> fillCategories(Long offset, ArrayList<Row> vertList, String path) {
 
         Map<String, Long> mapVenueCategory = new HashMap<>();
 
         try (Stream<String> stream = Files.lines(Paths.get(path))) {
             Object[] arr = stream.toArray();
-            for(int i = 1; i < arr.length; i++){
-                String data = (String) arr[i];
+            for(long i = 1 + offset ; i < arr.length + offset; i++){
+                String data = (String) arr[(int)(i - offset)];
                 String datas[] = data.split(",");
                 String finalData = datas[0].replace("\"", "");
 
-                mapVenueCategory.put(finalData, i+offset);
-                vertList.add(RowFactory.create((long)i,null,finalData,null,4));
+                mapVenueCategory.put(finalData, i);
+                vertList.add(RowFactory.create(i,null,finalData,null,4));
             }
         } catch (IOException e) {
             System.out.println("Tiro exception a la fillCategories + " + e);
@@ -104,8 +110,8 @@ public class LoadNewVertices {
 
         try (Stream<String> stream = Files.lines(Paths.get(path))) {
             Object[] arr = stream.toArray();
-            for(int i = 1 ; i < arr.length; i++){
-                String data = (String) arr[i];
+            for(long i = 1 ; i < arr.length; i++){
+                String data = (String) arr[(int)i];
                 String datas[] = data.split(",");
                 Double latitude = Double.parseDouble(datas[2].replace("\"", ""));
                 Double longitude = Double.parseDouble(datas[3].replace("\"", ""));
@@ -115,7 +121,7 @@ public class LoadNewVertices {
                 venues.add(v);
                 mapVenues.put(id, i+offset);
                 idToVenue.put(id, v);
-                vertList.add(RowFactory.create((long)i,id,null,null,2));
+                vertList.add(RowFactory.create(i,id,null,null,2));
             }
         } catch (IOException e) {
             System.out.println("Tiro exception a la fillVenues + " + e);

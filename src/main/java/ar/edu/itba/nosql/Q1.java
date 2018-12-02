@@ -32,9 +32,15 @@ public class Q1 extends GraphRunnable{
 
 		Column c1 = triplets.col("src.id").as("id");
 		Column c2 = triplets.col("to.venueid").as("to_id");
+		Column c3 = triplets.col("e.edgetype").as("edgetype");
+		Column c4 = triplets.col("src.vertextype").as("src.vtype");
+		Column c5 = triplets.col("to.vertextype").as("to.vtype");
 
-		Dataset<Row> filterededges = super.g.edges();
-		Dataset<Row> filteredvertices = triplets.select(c1, c2);
+		Column c6 = triplets.col("e.src").as("src");
+		Column c7 = triplets.col("e.dst").as("dst");
+
+		Dataset<Row> filterededges = triplets.select(c6,c7);
+		Dataset<Row> filteredvertices = triplets.select(c1, c2, c3, c4, c5);
 
 		GraphFrame graphFrame = GraphFrame.apply(filteredvertices, filterededges);
 

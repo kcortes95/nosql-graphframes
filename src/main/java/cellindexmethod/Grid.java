@@ -2,6 +2,8 @@ package cellindexmethod;
 
 import models.Venue;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 
@@ -59,4 +61,23 @@ public abstract class Grid {
 	public double getL() {
 		return L;
 	}
+
+	public static List<Integer> getGridPos(int m, Double lat, Double lng){
+		List<Integer> list = new ArrayList<>();
+		double l = Math.max(maxLat - minLat + 0.01, maxLon - minLon + 0.01);
+
+		int x = (int) (Math.floor((lat - minLat) / (l / m)));
+		int y = (int) (Math.floor((lng - minLon) / (l / m)));
+
+		list.add(x);
+		list.add(y);
+		return list;
+	}
+
+	public Set<Venue> getVenuesFromPos(double lat, Double lng){
+		int x = (int) (Math.floor((lat - minLat) / (L / M)));
+		int y = (int) (Math.floor((lng - minLon) / (L / M)));
+		return cells[x][y].getVenues();
+	}
+
 }
